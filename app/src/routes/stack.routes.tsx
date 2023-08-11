@@ -16,7 +16,9 @@ import { VisualizarSaida } from "../screens/Responsavel/VisualizarSaida";
 
 export function StackRoutes() {
     return (
-        <Navigator>
+        <Navigator screenOptions={{
+            headerShown: false,
+        }}>
             <Screen
                 name="LogIn"
                 component={LogIn}

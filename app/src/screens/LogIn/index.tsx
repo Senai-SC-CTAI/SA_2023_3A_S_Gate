@@ -11,20 +11,22 @@ export function LogIn() {
   return (
     <View style={styles.container}>
       <Text>Testando LogIn</Text>
-      <Button title='Ir para aluno' color={"#0F0"}
+      <Button title='Ir para aluno' color={"#00ADB5"}
       onPress={() => {
         navigation.navigate('HomeAluno')
       }}/>
-      <Button title='Ir para professor' color={"#0F0"}
+      <Button title='Ir para professor' color={"#00ADB5"}
       onPress={() => {
         navigation.navigate('HomeProfessor')
       }}/>
-      <Button title='Ir para responsavel' color={"#0F0"}
+      <Button title='Ir para responsavel' color={"#00ADB5"}
       onPress={() => {
         navigation.navigate('HomeResponsavel')
       }}/>
-      <Text>{'/n'}</Text>
-      <Button title='Esqueci senha' color={"#0F0"}
+      <Text>
+
+      </Text>
+      <Button title='Esqueci senha' color={"#00ADB5"}
       onPress={() => {
         navigation.navigate('RecuperarSenha')
       }}/>

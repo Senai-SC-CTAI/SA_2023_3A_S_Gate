@@ -11,6 +11,10 @@ export function ListarSaidaResp() {
     return (
         <View style={styles.container}>
             <Text>listar saida resp</Text>
+            <Button title='Visualizar' color={"#00ADB5"}
+                onPress={() => {
+                    navigation.navigate('VisualizarSaida')
+                }} />
         </View>
     );
 }

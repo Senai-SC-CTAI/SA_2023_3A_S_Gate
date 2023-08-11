@@ -11,17 +11,13 @@ export function HomeResponsavel() {
     return (
         <View style={styles.container}>
             <Text>Testando Tela Responsavel</Text>
-            <Button title='Listar saida' color={"#0F0"}
+            <Button title='Listar saida' color={"#00ADB5"}
                 onPress={() => {
                     navigation.navigate('ListarSaidaResp')
                 }} />
-            <Button title='Criar Saida' color={"#0F0"}
+            <Button title='Criar Saida' color={"#00ADB5"}
                 onPress={() => {
                     navigation.navigate('CriarSaidaResp')
-                }} />
-            <Button title='Visualizar' color={"#0F0"}
-                onPress={() => {
-                    navigation.navigate('VisualizarSaida')
                 }} />
         </View>
     );

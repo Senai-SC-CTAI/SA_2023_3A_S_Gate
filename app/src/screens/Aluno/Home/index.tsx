@@ -11,11 +11,11 @@ export function HomeAluno() {
     return (
         <View style={styles.container}>
             <Text>Testando Tela Aluno</Text>
-            <Button title='Listar saida' color={"#0F0"}
+            <Button title='Listar saida' color={"#00ADB5"}
                 onPress={() => {
                     navigation.navigate('ListarSaida')
                 }} />
-            <Button title='Criar Saida' color={"#0F0"}
+            <Button title='Criar Saida' color={"#00ADB5"}
                 onPress={() => {
                     navigation.navigate('CriarSaida')
                 }} />
