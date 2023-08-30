@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#393E46",
-    justifyContent: "center",
-    alignItems: "center"
+  esqueciSenha: {
+    fontFamily: "Nunito-SemiBoldItalic",
+    fontSize: 15,
+    color: "#707070",
+  },
+  logo: {
+    marginBottom: 45
   }
 });
