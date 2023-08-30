@@ -1,36 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 import { styles } from './styles';
 import { useNavigation } from '@react-navigation/native'
 import { colors, gstyles } from '../../../theme';
 import { Feather } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Header } from '../../../components/Header';
-import SideMenu from 'react-native-side-menu';
-import { Drawer } from '../../../components/Drawer';
 
 export function CriarSaida() {
-    const [drawerOpen, setDrawerOpen] = useState(false);
-
     const navigation = useNavigation()
     function go(to: string) {
         navigation.navigate(to)
     }
 
-    function openDrawer(){
-        setDrawerOpen(true)
-    }
-
-
     return (
-        <SideMenu menu={<Drawer></Drawer>} 
-        isOpen={drawerOpen} 
-        edgeHitWidth={200}
-        onChange={(isOpen) => {
-            setDrawerOpen(isOpen)
-        }}>
         <SafeAreaView style={[gstyles.container]}>
-        <Header openDrawer={openDrawer}></Header>
+            <View style={gstyles.header}>
+                <Feather name="menu" size={40} color={colors.cyan} />
+                <Image source={require("../../../../assets/logo64.png")} style={gstyles.headerLogo} />
+            </View>
             <View style={[gstyles.bodyList, { alignItems: "center" }]}>
                 <View style={gstyles.saidaInputView}>
                     <Text style={gstyles.listTitle}>
@@ -72,6 +59,5 @@ export function CriarSaida() {
                 </View>
             </View>
         </SafeAreaView >
-    </SideMenu>
     );
 }

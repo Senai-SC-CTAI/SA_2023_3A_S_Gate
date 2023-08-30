@@ -10,8 +10,10 @@ import { ListarSaida } from "../screens/Aluno/ListarSaida";
 import { CriarSaida } from "../screens/Aluno/CriarSaida";
 import { CriarSaidaResp } from "../screens/Responsavel/CriarSaidaResp";
 import { ListarSaidaResp } from "../screens/Responsavel/ListarSaidaResp";
-import { RecuperarSenha } from "../screens/Responsavel/RecuperarSenha";
+import { RecuperarSenha } from "../screens/Responsavel/Senha/RecuperarSenha";
 import { VisualizarSaida } from "../screens/Responsavel/VisualizarSaida";
+import { ConfirmarCodigo } from "../screens/Responsavel/Senha/ConfirmarCodigo";
+import { NovaSenha } from "../screens/Responsavel/Senha/NovaSenha";
 
 
 export function StackRoutes() {
@@ -88,6 +90,16 @@ export function StackRoutes() {
                 }}
             />
             <Screen
+                name="VisualizarSaida"
+                component={VisualizarSaida}
+                options={{
+                    title: "VisualizarSaida",
+                }}
+            />
+
+            {/* Responsavel telas - recuperar senha */}
+
+            <Screen
                 name="RecuperarSenha"
                 component={RecuperarSenha}
                 options={{
@@ -95,10 +107,17 @@ export function StackRoutes() {
                 }}
             />
             <Screen
-                name="VisualizarSaida"
-                component={VisualizarSaida}
+                name="ConfirmarCodigo"
+                component={ConfirmarCodigo}
                 options={{
-                    title: "VisualizarSaida",
+                    title: "ConfirmarCodigo",
+                }}
+            />
+            <Screen
+                name="NovaSenha"
+                component={NovaSenha}
+                options={{
+                    title: "NovaSenha",
                 }}
             />
         </Navigator>
