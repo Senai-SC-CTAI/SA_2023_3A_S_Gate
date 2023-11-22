@@ -39,6 +39,7 @@ public class EstudanteController {
             estudante.setEmail(estudanteAtualizado.getEmail());
             estudante.setNome(estudanteAtualizado.getNome());
             estudante.setTurma(estudanteAtualizado.getTurma());
+            estudante.setSenha(estudanteAtualizado.getSenha());
             Estudante estudanteAtualizadoBD = estudanteRepository.save(estudante);
             return ResponseEntity.ok(estudanteAtualizadoBD);
         } else {

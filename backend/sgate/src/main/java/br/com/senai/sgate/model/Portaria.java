@@ -12,7 +12,5 @@ public class Portaria {
     private Long idPortaria;
     private String email;
     private String nome;
-    
-    @ManyToOne
-    private Senha senha;
+    private String senha;
 }

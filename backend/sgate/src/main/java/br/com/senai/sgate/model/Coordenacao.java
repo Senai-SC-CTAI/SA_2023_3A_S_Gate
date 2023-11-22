@@ -12,7 +12,5 @@ public class Coordenacao {
     private Long idCoordenacao;
     private String email;
     private String nome;
-    
-    @ManyToOne
-    private Senha senha;
+    private String senha;
 }

@@ -7,6 +7,10 @@ import jakarta.persistence.*;
 @Getter
 @Setter
 public class Responsabilidade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idResponsabilidade;
+    
     @ManyToOne
     private Estudante estudante;
     

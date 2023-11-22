@@ -13,8 +13,6 @@ public class Responsavel {
     private String email;
     private String nome;
     private String telefone;
-    
-    @ManyToOne
-    private Senha senha;
+    private String senha;
    
 }

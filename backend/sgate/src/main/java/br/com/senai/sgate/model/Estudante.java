@@ -12,8 +12,8 @@ public class Estudante {
     private Long idEstudante;
     private String email;
     private String nome;
+    private String senha;
     
-    @ManyToOne
-    private Turma turma;
+    private int turma;
 
 }

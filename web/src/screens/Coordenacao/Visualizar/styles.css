@@ -1,0 +1,37 @@
+.contentVisualizar {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+  }
+
+  .marginContent {
+    margin: 3%;
+    width: 100%;
+  }
+
+  .marginContent input {
+    background-color: #EEEEEE;
+    border: solid #222831 2px;
+    margin-right: 1%;
+  }
+
+  .listHeader {
+    width: 80%;
+    height: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    margin-top: 3%;
+  }
+
+  .separadorLista {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 2;
+    height: 4px;
+    background-color: #D9D9D9;
+    border-radius: 2px;
+  }

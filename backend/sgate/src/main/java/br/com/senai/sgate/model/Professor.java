@@ -12,7 +12,5 @@ public class Professor {
     private Long idProfessor;
     private String email;
     private String nome;
-    
-    @ManyToOne
-    private Senha senha;
+    private String senha;
 }
