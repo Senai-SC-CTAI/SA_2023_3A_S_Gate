@@ -13,7 +13,6 @@ public class Estudante {
     private String email;
     private String nome;
     private String senha;
-    
-    private int turma;
+    private String turma;
 
 }

@@ -1,0 +1,10 @@
+select {
+  width: 440px;
+  padding: 20px;
+  border-radius: 5px;
+  border-style: none;
+  margin-top: 30px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background-color: white;
+}

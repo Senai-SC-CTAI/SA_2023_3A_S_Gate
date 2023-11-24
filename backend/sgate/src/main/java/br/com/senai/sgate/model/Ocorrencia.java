@@ -6,15 +6,16 @@ import jakarta.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Pedido {
+public class Ocorrencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPedido;
-    private String horario;
+    private Long idOcorrencia;
     private String data;
-    private String status;
-    private Long professor;
-    private Long estudante;
-    private Long responsavel;
-
+    private String horario;
+    
+    @ManyToOne
+    private Portaria portaria;
+    
+    @ManyToOne
+    private Estudante estudante;
 }

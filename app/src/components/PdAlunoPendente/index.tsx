@@ -3,23 +3,25 @@ import { styles } from './styles';
 import { Feather } from '@expo/vector-icons';
 import { colors } from '../../theme';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 type Props = {
     data: string;
     horario: string;
-    aluno: boolean;
+    id: number;
 }
 
 
 
-export function PdAlunoPendente({ data, horario, aluno }: Props) {
+export function PdAlunoPendente({ data, horario, id }: Props) {
     const navigation = useNavigation()
     function go(to: string) {
         navigation.navigate(to)
     }
 
+
     return (
-        <TouchableOpacity style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.info}>
                 <Text style={styles.title}>
                     {data} - {horario}
@@ -28,7 +30,7 @@ export function PdAlunoPendente({ data, horario, aluno }: Props) {
                     Aguardando aprovação
                 </Text>
             </View>
-            <Feather name='trash' size={40} color={colors.grayDark}></Feather>
-        </TouchableOpacity>
+            <TouchableOpacity><Feather name='trash' size={40} color={colors.grayDark}></Feather></TouchableOpacity>
+        </View>
     );
 }

@@ -23,9 +23,9 @@ public class PortariaController {
         return portariaRepository.save(portaria);
     }
     @DeleteMapping("/{idPortaria}")
-    public ResponseEntity<String> deletarPortaria(@PathVariable Long cod) {
+    public ResponseEntity<String> deletarPortaria(@PathVariable Long idPortaria) {
         try {
-            portariaRepository.deleteById(cod);
+            portariaRepository.deleteById(idPortaria);
             return ResponseEntity.ok("Portaria deletado com sucesso.");
         } catch (EmptyResultDataAccessException e) {
             return ResponseEntity.notFound().build();

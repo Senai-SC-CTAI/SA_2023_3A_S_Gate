@@ -2,6 +2,8 @@ import logo64 from "../../assets/logo64.png"
 import { FiUser, FiLogOut, FiClipboard, FiShield, FiBookOpen, FiPenTool, FiX, FiUsers, FiList } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import "./styles.css"
+import axios from "axios"
+import { useState, useEffect } from "react"
 
 function HomePortaria() {
     return (
@@ -27,7 +29,7 @@ function HomePortaria() {
                                 <input type="text" placeholder="Data"></input>
                                 <input type="text" placeholder="Horário"></input>
                                 <input type="text" placeholder="Observações"></input>
-                                <input type="password" placeholder="Senha da portaria"></input>
+                                <input type="text" placeholder="Portaria"></input>
                             </div>
                             <button><h2>Registrar</h2></button>
                         </div>

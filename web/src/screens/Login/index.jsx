@@ -4,9 +4,9 @@ import axios from 'axios'
 import logo128 from '../../assets/logo128.png'
 import './login.css'
 
-const logar = async (email, senha) => {
+const logar = async (email, senha, tipo) => {
   try {
-    const response = await axios.post('http://localhost:8090/api/login', {
+    const response = await axios.post(`http://localhost:8090/api/login${tipo}`, {
       email: email,
       senha: senha,
     });
@@ -20,20 +20,21 @@ function Login() {
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [auth, setAuth] = useState(false);
-  const handleLogin = async () => {
+  
+  const handleLogin = async (tipo) => {
     try {
       if (!email || !senha) {
         alert("Campos não podem ser nulos")
       }
       else {
-        const response = await logar(email, senha);
+        const response = await logar(email, senha, tipo);
         if (response) {
-          window.location.href = "/home"
-          setAuth(true)
-        }
-        else {
-          alert("Credenciais inválidas")
+          if (tipo == "coordenacao") {
+            window.location.href = "/home"
+           }
+           else {
+            window.location.href = "portaria"
+           } 
         }
       }
     } catch (error) {
@@ -47,7 +48,8 @@ function Login() {
         <img src={logo128}></img>
         <input type={"text"} placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
         <input type={"password"} placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)}></input>
-        <button onClick={handleLogin}>Entrar</button>
+        <button className="loginButton" onClick={() => handleLogin("coordenacao")}>Entrar como coordenação</button>
+        <button className="loginButton" onClick={() => handleLogin("portaria")}>Entrar como portaria</button>
         <div className="resetPass"><Link to={"/esqueciasenha1"} className='resetPass'>Esqueci a senha</Link></div>
       </div>
     </div>

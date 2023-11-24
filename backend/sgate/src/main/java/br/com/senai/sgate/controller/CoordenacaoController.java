@@ -23,9 +23,9 @@ public class CoordenacaoController {
         return coordenacaoRepository.save(coordenacao);
     }
     @DeleteMapping("/{idCoordenacao}")
-    public ResponseEntity<String> deletarCoordenacao(@PathVariable Long cod) {
+    public ResponseEntity<String> deletarCoordenacao(@PathVariable Long idCoordenacao) {
         try {
-            coordenacaoRepository.deleteById(cod);
+            coordenacaoRepository.deleteById(idCoordenacao);
             return ResponseEntity.ok("Coordenacao deletado com sucesso.");
         } catch (EmptyResultDataAccessException e) {
             return ResponseEntity.notFound().build();

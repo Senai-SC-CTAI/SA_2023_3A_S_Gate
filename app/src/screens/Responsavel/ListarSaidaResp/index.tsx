@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, TextInput, FlatList } from 'react-native';
 import { styles } from './styles';
 import { useNavigation } from '@react-navigation/native'
@@ -7,6 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { PdRespPendente } from '../../../components/PdRespPendente';
 import { PdRespConc } from '../../../components/PdRespConc';
+import axios from 'axios';
 
 export function ListarSaidaResp() {
   const navigation = useNavigation()
@@ -14,40 +15,24 @@ export function ListarSaidaResp() {
     navigation.navigate(to)
   }
 
-  const pendente = [{
-    data: "01/01/1900",
-    horario: "12:00",
-    aluno: true
-  },
-  {
-    data: "01/01/1900",
-    horario: "12:00",
-    aluno: false
-  }
-]
+  const [pedidos, setPedidos] = useState<any[]>([])
 
-  const conc = [{
-    data: "01/01/1900",
-    horario: "12:00"
-  }, {
-    data: "01/01/1900",
-    horario: "12:00"
-  }, {
-    data: "01/01/1900",
-    horario: "12:00"
-  }, {
-    data: "01/01/1900",
-    horario: "12:00"
-  }, {
-    data: "01/01/1900",
-    horario: "12:00"
-  }, {
-    data: "01/01/1900",
-    horario: "12:00"
-  }, {
-    data: "01/01/1900",
-    horario: "12:00"
-  }]
+  useEffect(() => {
+    fetchPedidos()
+}, [])
+
+  const fetchPedidos = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8090/pedidos`);
+        setPedidos(response.data);
+    } catch (error) {
+        console.error('Erro ao buscar pedidos:', error);
+    }
+}
+
+  const pendente = pedidos.filter(pedido => pedido.status == "Sol.Est" || "Sol.Res")
+
+  const aprovado = pedidos.filter(pedido => pedido.status == "Apv")
 
   return (
     <SafeAreaView style={[gstyles.container, { paddingBottom: 50 }]}>
@@ -66,15 +51,19 @@ export function ListarSaidaResp() {
             <PdRespPendente
               data={item.data}
               horario={item.horario}
-              aluno={item.aluno} />
+              status={item.status}
+              id={item.id}
+               />
           }
         />
         <Text style={gstyles.listTitle}>
           Histórico
         </Text>
+        <button onClick={() => console.log(pedidos)}/>
         <FlatList
           style={gstyles.list}
-          data={conc}
+          data={aprovado}
+          keyExtractor={pedido => pedido.idPedido}
           renderItem={({ item }) =>
             <PdRespConc
               data={item.data}

@@ -41,8 +41,6 @@ public class PedidoController {
             pedido.setStatus(pedidoAtualizado.getStatus());
             pedido.setProfessor(pedidoAtualizado.getProfessor());
             pedido.setEstudante(pedidoAtualizado.getEstudante());
-            pedido.setCoordenacao(pedidoAtualizado.getCoordenacao());
-            pedido.setResponsavel(pedidoAtualizado.getResponsavel());
             Pedido pedidoAtualizadoBD = pedidoRepository.save(pedido);
             return ResponseEntity.ok(pedidoAtualizadoBD);
         } else {

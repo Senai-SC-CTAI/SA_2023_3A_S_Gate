@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../theme';
 
 export const styles = StyleSheet.create({
   esqueciSenha: {
@@ -8,5 +9,14 @@ export const styles = StyleSheet.create({
   },
   logo: {
     marginBottom: 45
-  }
+  },
+  submitButton: {
+    width: "25%",
+    height: "6.5%",
+    borderRadius: 40,
+    backgroundColor: colors.cyan,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 15
+  },
 });

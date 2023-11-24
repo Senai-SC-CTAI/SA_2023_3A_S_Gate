@@ -1,9 +1,14 @@
 import logo64 from "../../../assets/logo64.png"
 import { FiUser, FiLogOut, FiClipboard, FiShield, FiBookOpen, FiPenTool, FiX, FiUsers, FiList } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './home.css'
+import { useEffect } from "react"
 
 function Home() {
+  useEffect(() => {
+    
+  }, [])
+
   return (
     <div className='home'>
       <div className="header">

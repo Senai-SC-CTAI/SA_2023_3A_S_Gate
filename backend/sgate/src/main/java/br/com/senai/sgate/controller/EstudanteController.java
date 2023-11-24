@@ -23,9 +23,9 @@ public class EstudanteController {
         return estudanteRepository.save(estudante);
     }
     @DeleteMapping("/{idEstudante}")
-    public ResponseEntity<String> deletarEstudante(@PathVariable Long cod) {
+    public ResponseEntity<String> deletarEstudante(@PathVariable Long idEstudante) {
         try {
-            estudanteRepository.deleteById(cod);
+            estudanteRepository.deleteById(idEstudante);
             return ResponseEntity.ok("Estudante deletado com sucesso.");
         } catch (EmptyResultDataAccessException e) {
             return ResponseEntity.notFound().build();

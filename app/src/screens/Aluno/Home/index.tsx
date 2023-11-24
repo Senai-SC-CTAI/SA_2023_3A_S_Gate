@@ -6,11 +6,13 @@ import { colors, gstyles } from '../../../theme';
 import { Feather } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export function HomeAluno() {
+export function HomeAluno({ route }) {
   const navigation = useNavigation()
-  function go(to: string) {
-    navigation.navigate(to)
+  function go(to: string, parameters: object) {
+    navigation.navigate(to, parameters)
   }
+
+  const { email } = route.params;
 
   return (
     <SafeAreaView style={[gstyles.container]}>
@@ -26,11 +28,11 @@ export function HomeAluno() {
           Gerenciador de saídas S-Gate
         </Text>
         <View style={gstyles.buttonRow}>
-          <TouchableOpacity style={gstyles.homeButton} onPress={() => go("ListarSaida")}>
+          <TouchableOpacity style={gstyles.homeButton} onPress={() => go("ListarSaida", {"email": email})}>
             <Feather name="list" size={60} color={colors.grayDark} />
             <Text style={gstyles.homeButtonText}>Visualizar saídas</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={gstyles.homeButton} onPress={() => go("CriarSaida")}>
+          <TouchableOpacity style={gstyles.homeButton} onPress={() => go("CriarSaida", {"email": email})}>
             <Feather name="plus" size={60} color={colors.grayDark} />
             <Text style={gstyles.homeButtonText}>Criar pedido</Text>
           </TouchableOpacity>

@@ -6,11 +6,13 @@ import { colors, gstyles } from '../../../theme';
 import { Feather } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export function VisualizarSaida() {
+export function VisualizarSaida({ route }) {
     const navigation = useNavigation()
-    function go(to: string) {
-        navigation.navigate(to)
+    function go(to: string, parameters: object) {
+        navigation.navigate(to, parameters)
     }
+  
+    const { data, horario, status, id } = route.params;
 
     return (
         <SafeAreaView style={[gstyles.container]}>

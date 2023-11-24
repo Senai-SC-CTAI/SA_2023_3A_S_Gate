@@ -23,9 +23,9 @@ public class ResponsavelController {
         return responsavelRepository.save(responsavel);
     }
     @DeleteMapping("/{idResponsavel}")
-    public ResponseEntity<String> deletarResponsavel(@PathVariable Long cod) {
+    public ResponseEntity<String> deletarResponsavel(@PathVariable Long idResponsavel) {
         try {
-            responsavelRepository.deleteById(cod);
+            responsavelRepository.deleteById(idResponsavel);
             return ResponseEntity.ok("Responsavel deletado com sucesso.");
         } catch (EmptyResultDataAccessException e) {
             return ResponseEntity.notFound().build();

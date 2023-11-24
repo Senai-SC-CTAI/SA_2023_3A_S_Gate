@@ -51,7 +51,7 @@ function CadastroAluno() {
             <input type="text" placeholder="Nome" value={nome} onChange={(e) => setNome(e.target.value)}></input>
             <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
             <input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)}></input>
-            <input type="number" placeholder="Id da Turma" value={turma} onChange={(e) => setTurma(e.target.value)}></input>
+            <input type="text" placeholder="Turma" value={turma} onChange={(e) => setTurma(e.target.value)}></input>
             <input type="text" placeholder="Email do responsável" value={emailResp} onChange={(e) => setEmailResp(e.target.value)}></input>
             </div>
             <button onClick={handleSubmit}><h2>Cadastrar</h2></button>
